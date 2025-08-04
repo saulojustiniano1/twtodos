@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
-from todos.views import home
+from todos.views import todo_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name="home"),
+    path("", todo_list, name="todo_list"),
 ]
