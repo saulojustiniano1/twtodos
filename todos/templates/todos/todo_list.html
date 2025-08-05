@@ -5,7 +5,7 @@
 {% block content %}
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="">Lista de tarefas</h1>
-    <a href="{% url 'todo_form' %}" class="btn btn-primary">Nova Tarefa</a>
+    <a href="{% url 'todo_create' %}" class="btn btn-primary">Nova Tarefa</a>
   </div>
 
   {% if todo_list %}
@@ -30,6 +30,7 @@
         <td>{{ todo.finished_at | default:"-" }}</td>
         <td>
           <a href="#" class="btn btn-primary btn-sm">Concluir</a>
+          <a href="{% url "todo_update" pk=todo.pk %}" class="btn btn-secondary btn-sm">Editar</a>
           <a href="#" class="btn btn-danger btn-sm">Excluir</a>
         </td>
       </tr>
